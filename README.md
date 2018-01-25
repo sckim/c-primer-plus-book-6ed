@@ -1,2 +1,5 @@
 # C Primer Plus, 6th Edition #
-All Source Code that was written for this book.
+위 책의 소스입니다.
+
+일부는 수업에 적합하도록 변경해서 사용하고 있습니다.
+관련 예를 보면서 궁금한 점이나 잘못된 것이 있으면 교수자에게 알려줘요.
