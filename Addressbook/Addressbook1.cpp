@@ -9,7 +9,7 @@
 
 #include<string.h>
 
-#define CAPACITY 100	// 100  가능
+#define CAPACITY 100	// the number of persons = 100
 #define BUFFER_SIZE 20
 
 char*names[CAPACITY];
@@ -64,7 +64,7 @@ void add() {
 	scanf("%s", buf2);
 
 	names[n] = strdup(buf1);                //strdup strcpy
-	//  , 복사
+	// allocate memory and copy the string
 	numbers[n] = strdup(buf2);
 	n++;
 
