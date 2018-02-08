@@ -3,10 +3,9 @@
 
 #include "stdafx.h"
 
-#include <stdio.h>
 // to solve scanf problem
 #pragma warning (disable : 4996)
-
+#include <stdio.h>
 #include<string.h>
 
 #define CAPACITY 100	// the number of persons = 100
