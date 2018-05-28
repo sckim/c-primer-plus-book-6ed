@@ -1,10 +1,6 @@
-﻿// ConsoleApplication1.cpp: 콘솔 응용 프로그램의 진입점을 정의합니다.
-//
-
-#include "stdafx.h"
-
 // to solve scanf problem
 #pragma warning (disable : 4996)
+
 #include <stdio.h>
 #include<string.h>
 
