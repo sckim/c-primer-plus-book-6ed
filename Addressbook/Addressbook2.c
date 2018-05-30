@@ -143,14 +143,15 @@ void save(char *fileName) {
 }
 
 void delete(char *name) {
-
 	int i = search(name);
+	int j = i;
+
 	if (i == -1) {
 		printf("No person named '%s' exists.\n", name);
 		return;
 	}
 
-	int j = i;
+
 	for (; j < n - 1; j++) {
 		names[j] = names[j + 1];
 		numbers[j] = numbers[j + 1];
@@ -179,9 +180,12 @@ int search(char *name) {
 }
 
 void add(char *name, char *number) {
+	int i;
+
 	if (n >= capacity)
 		reallocate();
-	int i = n - 1;
+	
+	i = n - 1;
 	while (i >= 0 && strcmp(names[i], name) > 0) {
 		names[i + 1] = names[i];
 		numbers[i + 1] = numbers[i];
@@ -196,9 +200,10 @@ void reallocate(void)
 {
 	int i;
 
-	capacity *= 2;
 	char **tmp1 = (char**)malloc(capacity * sizeof(char*));
 	char **tmp2 = (char**)malloc(capacity * sizeof(char*));
+
+	capacity *= 2;
 
 	for (i = 0; i < n; i++) {
 		tmp1[i] = names[i];
