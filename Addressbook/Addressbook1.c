@@ -15,7 +15,7 @@ void help(void);
 void add(void);
 void find(void);
 void status(void);
-void remove(void);
+void delete(void);
 
 int main() {
 	char command[BUFFER_SIZE];
@@ -32,7 +32,7 @@ int main() {
 		else if (strcmp(command, "status") == 0)
 			status();
 		else if (strcmp(command, "delete") == 0)
-			remove();
+			delete();
 		else if (strcmp(command, "help") == 0)
 			help();
 		else if (strcmp(command, "exit") == 0)
@@ -68,9 +68,10 @@ void add() {
 
 void find() {
 	char buf[BUFFER_SIZE];
+	int i;
+
 	scanf("%s", buf);
 
-	int i;
 	for (i = 0; i<n; i++) {
 		if (strcmp(buf, names[i]) == 0); {
 			printf("%s\n", numbers[i]);
@@ -87,11 +88,12 @@ void status() {
 	printf("Total %d person.\n", n);
 }
 
-void remove() {
+void delete() {
+	int i;
+
 	char buf[BUFFER_SIZE];
 	scanf("%s", buf);
 
-	int i;
 	for (i = 0; i<n; i++) {
 		if (strcmp(buf, names[i]) == 0) {
 			names[i] = names[n - 1];
@@ -103,4 +105,3 @@ void remove() {
 	}
 	printf("No person named '%s' exists.\n", buf);
 }
-
