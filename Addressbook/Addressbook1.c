@@ -7,15 +7,15 @@
 #define CAPACITY 100	// the number of persons = 100
 #define BUFFER_SIZE 20
 
-char*names[CAPACITY];
-char*numbers[CAPACITY];
+char* names[CAPACITY];
+char* numbers[CAPACITY];
 int n = 0;
 
 void help(void);
 void add(void);
 void find(void);
 void status(void);
-void delete(void);
+void del(void);
 
 int main() {
 	char command[BUFFER_SIZE];
@@ -32,7 +32,7 @@ int main() {
 		else if (strcmp(command, "status") == 0)
 			status();
 		else if (strcmp(command, "delete") == 0)
-			delete();
+			del();
 		else if (strcmp(command, "help") == 0)
 			help();
 		else if (strcmp(command, "exit") == 0)
@@ -72,8 +72,8 @@ void find() {
 
 	scanf("%s", buf);
 
-	for (i = 0; i<n; i++) {
-		if (strcmp(buf, names[i]) == 0); {
+	for (i = 0; i < n; i++) {
+		if (strcmp(buf, names[i]) == 0) {
 			printf("%s\n", numbers[i]);
 			return;
 		}
@@ -83,18 +83,18 @@ void find() {
 
 void status() {
 	int i;
-	for (i = 0; i<n; i++)
+	for (i = 0; i < n; i++)
 		printf("%s %s\n", names[i], numbers[i]);
 	printf("Total %d person.\n", n);
 }
 
-void delete() {
+void del() {
 	int i;
 
 	char buf[BUFFER_SIZE];
 	scanf("%s", buf);
 
-	for (i = 0; i<n; i++) {
+	for (i = 0; i < n; i++) {
 		if (strcmp(buf, names[i]) == 0) {
 			names[i] = names[n - 1];
 			numbers[i] = numbers[n - 1];
